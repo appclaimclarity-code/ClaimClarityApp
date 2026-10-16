@@ -1,0 +1,9 @@
+{
+  "appId": "com.claimclarity.app",
+  "appName": "Claim Clarity",
+  "webDir": "www",
+  "server": {
+    "url": "https://claimclarityapp.com",
+    "cleartext": true
+  }
+}
