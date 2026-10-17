@@ -18,8 +18,8 @@ jobs:
         run: npm run build --if-present
       - name: Grant Execute Permission to Binaries
         run: chmod +x node_modules/.bin/*
-      - name: Add iOS Platform & Sync
-        run: npx cap add ios || npx cap sync ios
+      - name: Sync Capacitor iOS
+        run: npx cap sync ios
       - name: Install CocoaPods
         run: |
           cd ios/App
