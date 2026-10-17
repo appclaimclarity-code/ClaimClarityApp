@@ -19,7 +19,7 @@ jobs:
       - name: Grant Execute Permission to Binaries
         run: chmod +x node_modules/.bin/*
       - name: Add iOS Platform & Sync
-        run: npx cap sync ios
+        run: npx cap add ios || npx cap sync ios
       - name: Install CocoaPods
         run: |
           cd ios/App
