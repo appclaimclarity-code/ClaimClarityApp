@@ -18,6 +18,10 @@ jobs:
         run: chmod +x node_modules/.bin/*
       - name: Build Web Assets & Sync
         run: npx cap sync ios
+      - name: Install CocoaPods
+        run: |
+          cd ios/App
+          pod install
       - name: Build iOS App via Xcode
         run: |
           cd ios/App
