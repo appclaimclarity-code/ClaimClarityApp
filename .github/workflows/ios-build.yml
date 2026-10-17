@@ -18,13 +18,17 @@ jobs:
         run: npm run build --if-present
       - name: Grant Execute Permission to Binaries
         run: chmod +x node_modules/.bin/*
-      - name: Sync Capacitor iOS
-        run: npx cap sync ios
+      - name: Setup iOS Platform
+        run: |
+          if [ ! -d "ios" ]; then
+            npx cap add ios
+          else
+            npx cap sync ios
+          fi
       - name: Install CocoaPods
         run: |
           cd ios/App
-          pod repo update
-          pod install --repo-update
+          pod install
       - name: Build iOS App via Xcode
         run: |
           cd ios/App
