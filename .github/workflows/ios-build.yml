@@ -25,9 +25,6 @@ jobs:
           cd ios/App
           pod repo update
           pod install --repo-update
-        run: |
-          cd ios/App
-          pod install
       - name: Build iOS App via Xcode
         run: |
           cd ios/App
